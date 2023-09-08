@@ -1,6 +1,6 @@
-#IOC Container
-##IOC là gì?
+# Basic Java
+## IOC là gì?
 IOC là Inversion of Control, được hiểu là một nguyên lý thiết kế ứng dụng trong công nghệ phần mềm. 
 Áp dụng thiết kế này để đảo ngược quyền điều khiển so với kiến trúc lập trình hướng thủ tục
 
-##Spring IOC
+## Spring IOC
