@@ -2,7 +2,7 @@
 ## Khái niệm cơ bản về Inversion Of Control
 IoC là một nguyên tắc thiết kế phần mềm, nó đảo ngược quyền kiểm soát của ứng dụng. Trong truyền thống, các đối tượng xây dựng và quản lý các thực thể khác. Tuy nhiên, khi áp dụng IoC, việc xử lý các khối logic và quyết định được chuyển sang bên ngoài và được quản lý bởi IoC Container. IoC có trách nhiệm xây dựng và quản lý các đối tượng, thay vì đối tượng tự quản lý chính nó
 ### Ví dụ
-![vidu1](image.png) <br>
+![vidu1](https://i.imgur.com/n967KTe.png) <br>
 Trong mô hình không sử dụng IoC, class A sẽ phải khởi tạo và điều khiển hai class B và C, bất cứ thay đổi nào ở class A cũng sẽ dẫn tới thay đổi ở class B và C. Một thay đổi sẽ khéo theo hàng loạt các thay đổi khác, làm giảm khả năng bảo trì của code<br>
 <br>
 ![vidu2](https://i.imgur.com/5joJJFm.png) <br>
@@ -26,14 +26,14 @@ Trong mô hình sử dụng IoC, các class B và C sẽ độc lập với clas
 # Dependency Injection
 Là một kỹ thuật trong đó một object cung cấp các dependencies của một object khác. 
 Là một cách hiện thực Inversion of Control. Các module phụ thuộc(dependency) sẽ được inject vào module cấp cao.<br>
-![Alt text](image-2.png)
+![Alt text](https://i.imgur.com/ZY7XJ9j.png)
 <br>
 Ta có ví dụ sau:
 * Class MySqlDAO chuyên thực hiện truy vấn cơ sở dữ liệu MySQL của ứng dụng
 * Bây giờ nếu muốn truy vấn tới cơ sở dữ liệu từ Mongo. Thì phải xóa khai báo MySqlDAO và thay bằng MongoDAO, sau đó muốn dùng lại MySqlDAO thì lại phải sửa và test lại nhiều lần 
 
 Để hiểu Dependency Injection một cách đơn giản như sau:
-![Alt text](image-1.png)
+![Alt text](https://i.imgur.com/Gw5Ysva.png)
 * Các module không giao tiếp trực tiếp với nhau, mà thông qua interface. Module cấp thấp sẽ implement interface, module cấp cao sẽ gọi module cấp thấp thông qua interface
     * Để giao tiếp với database, ta có interface AbstractDAO, các module cấp thấp là MongoDAO, MySqlDAO. Module cấp cao là Client sẽ chỉ sử dụng interface AbstractDAO
 * Việc khởi tạo các module cấp thấp sẽ do DI Container thực hiện
@@ -67,4 +67,3 @@ Ta có ví dụ sau:
 ![Alt text](image-14.png)
 
 # What is a Spring Bean?
-
