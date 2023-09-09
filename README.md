@@ -42,28 +42,28 @@ Ta có ví dụ sau:
 * DI được dùng để làm giảm sự phụ thuộc giữa các module, dễ dàng hơn trong việc thay đổi module, bảo trì code và testing
 ## Ví dụ
 ### Tạo 1 interface để khai báo các method giao tiếp với database
-![Alt text](image-3.png)
+![Alt text](https://i.imgur.com/a7y0rSj.png)
 ### Tạo các class DAO tương ứng với từng loại database và implements các method của AbstractDAO
-![Alt text](image-5.png)
-![Alt text](image-4.png)
-![Alt text](image-6.png)
+![Alt text](https://i.imgur.com/sIAaNZv.png)
+![Alt text](https://i.imgur.com/a19RLsy.png)
+![Alt text](https://i.imgur.com/ff5pLJI.png)
 ### file config.properites lưu thông tin config quyết định kết nối với database nào
-![Alt text](image-7.png)
+![Alt text](https://i.imgur.com/XDNPECz.png)
 ### Class Client cần dùng đến DAO thì chúng ta sẽ khai báo AbstractDAO
-![Alt text](image-8.png)
+![Alt text](https://i.imgur.com/XWEkMpX.png)
 ### Tạo 1 file FactoryDAO để quyết định đối tượng được tạo ra
-![Alt text](image-9.png)
+![Alt text](https://i.imgur.com/a5iWUt4.png)
 ### Demo
-![Alt text](image-11.png)
+![Alt text](https://i.imgur.com/MCaFIcw.png)
 
 ## Các phương pháp thực hiện Dependency Injection
 * **Contructor Injection**: Các denpendency sẽ được truyền vào 1 class thông qua constructor của class đó. <br>
-![Alt text](image-12.png)
+![Alt text](https://i.imgur.com/hkhHtwU.png)
 
 * **Setter Injection**: Các dependency sẽ được truyền vào 1 class thông qua các hàm Setter/Getter<br>
-![Alt text](image-15.png)
+![Alt text](https://i.imgur.com/MQBqDEg.png)
 
 * **Public fields**: Các dependency sẽ được truyền vào 1 class một cách trực tiếp vào các public field. Cách này ít dc sử dụng<br>
-![Alt text](image-14.png)
+![Alt text](https://i.imgur.com/sT5D3II.png)
 
 # What is a Spring Bean?
