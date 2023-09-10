@@ -44,9 +44,9 @@ Ta có ví dụ sau:
 ### Tạo 1 interface để khai báo các method giao tiếp với database
 ![Alt text](https://i.imgur.com/a7y0rSj.png)
 ### Tạo các class DAO tương ứng với từng loại database và implements các method của AbstractDAO
-![Alt text](https://i.imgur.com/sIAaNZv.png) <br>
-![Alt text](https://i.imgur.com/a19RLsy.png) <br>
-![Alt text](https://i.imgur.com/ff5pLJI.png) <br>
+![Alt text](https://i.imgur.com/sIAaNZv.png)
+![Alt text](https://i.imgur.com/a19RLsy.png)
+![Alt text](https://i.imgur.com/ff5pLJI.png)
 ### file config.properites lưu thông tin config quyết định kết nối với database nào
 ![Alt text](https://i.imgur.com/XDNPECz.png)
 ### Class Client cần dùng đến DAO thì chúng ta sẽ khai báo AbstractDAO
@@ -67,3 +67,16 @@ Ta có ví dụ sau:
 ![Alt text](https://i.imgur.com/sT5D3II.png)
 
 # What is a Spring Bean?
+Spring Bean là các object trong Spring Framework, được khởi tạo thông qua Spring Container. Bean đại diện cho các thành phần cơ bản của ứng dụng và được quản lý bởi Spring Container để đảm bảo quản lý vòng đời của chúng và cung cấp Dependency Injection cho các thành phần khác trong ứng dụng.
+## Ví dụ
+![Alt text](https://i.imgur.com/sLsiVaY.png) <br>
+![Alt text](https://i.imgur.com/S7g4LLt.png)
+
+## Spring Bean Scope
+### Singleton
+* 
+### Prototype
+### Request
+### Session
+### Application
+### WebSocket
