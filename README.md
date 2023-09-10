@@ -44,8 +44,8 @@ Ta có ví dụ sau:
 ### Tạo 1 interface để khai báo các method giao tiếp với database
 ![Alt text](https://i.imgur.com/a7y0rSj.png)
 ### Tạo các class DAO tương ứng với từng loại database và implements các method của AbstractDAO
-![Alt text](https://i.imgur.com/sIAaNZv.png)
-![Alt text](https://i.imgur.com/a19RLsy.png)
+![Alt text](https://i.imgur.com/sIAaNZv.png) <br>
+![Alt text](https://i.imgur.com/a19RLsy.png) <br>
 ![Alt text](https://i.imgur.com/ff5pLJI.png)
 ### file config.properites lưu thông tin config quyết định kết nối với database nào
 ![Alt text](https://i.imgur.com/XDNPECz.png)
