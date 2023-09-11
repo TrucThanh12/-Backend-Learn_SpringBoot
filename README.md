@@ -97,15 +97,24 @@ Scope của một bean là nơi định nghĩa vòng đời, và cách nó đư�
 # Spring Bean Annotations
 ## @Component
 * Nó được sử dụng để đánh dấu một class là một Spring Component. Spring sẽ quét và tạo bean từ class được đánh dấu bởi **@Component** và thêm chúng và container IoC để quản lý
-* **Tạo bean tự động**: khi đánh dấu 1 class bằng **@Component**, Spring sẽ tự động tạo 1 bean từ class đó và thêm vào container IoC
-* **Quét tự động**: Spring quét các package được chỉ định để tìm và tạo bean từ các class được đánh dấu bởi **@Component** --> tự động phát hiện các bean trong ứng dụng
+* Khi đánh dấu 1 class bằng **@Component**, Spring sẽ tự động tạo 1 bean từ class đó và thêm vào container IoC
+* Spring quét các package được chỉ định để tìm và tạo bean từ các class được đánh dấu bởi **@Component** --> tự động phát hiện các bean trong ứng dụng
  
 ## @Controller
+* Là nơi đại diện cho lớp Controller trong mô hình MVC
+* Nó được sử dụng để đánh dấu một class là một Spring Component. Spring quét và tạo bean từ class được đánh dấu bởi **@Component**, Spring Framework sẽ nhận biết lớp đó như một controller và quản lý nó
+
 ## @RestController
+* Khi đánh dấu một lớp bằng **@RestController**, lớp đó sẽ hoạt động như một controller trong dự án Spring REST, chịu trách nhiệm xử lý các yêu cầu HTTP từ các ứng dụng hoặc dịch vụ khác thông qua các API REST
 ## @Service
+* Khi đánh dấu một lớp bằng **@Service**, nó là nơi xử lý nghiệp vụ của hệ thống và có thể được sử dụng lại ở nhiều nơi
 ## @Repository
+* là annotation cấp class, đại diện cho lớp Data Access Object(DAO), chịu trách nhiệm cho việc truy cập dữ liệu từ cơ sở dữ liệu
 ## @Configuration
+* Lớp được đánh dấu bằng **@Configuration**, nơi định nghĩa ra các Bean, thay thế cho thẻ '< bean />' trong file xml
+* Việc sử dụng **@Configuration** cho phép quản lý các Bean trong ứng dụng Spring bằng cách sử dụng mã Java thay vì cấu hình xml
 ## @Bean
+* **@Bean** tương ứng với phần từ **< bean />** trong XML, được sử dụng để tạo các Spring bean và thường được sử dụng cùng với **Configuration**
 ## @Bean vs @Component
 
 # Nguồn
@@ -113,3 +122,5 @@ https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and
 https://mazdagialaii.vn/inversion-of-control-la-gi/ <br>
 https://viblo.asia/p/dependency-injection-va-inversion-of-control-Qpmle9Nolrd <br>
 https://viblo.asia/p/tong-quan-ve-spring-bean-WR5JRbZ0JGv <br>
+https://shareprogramming.net/hieu-ro-spring-bean-scope/ <br>
+https://javatechonline.com/spring-boot-annotations-with-examples/ <br>
