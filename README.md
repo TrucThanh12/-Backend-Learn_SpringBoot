@@ -115,7 +115,6 @@ Scope của một bean là nơi định nghĩa vòng đời, và cách nó đư�
 * Việc sử dụng **@Configuration** cho phép quản lý các Bean trong ứng dụng Spring bằng cách sử dụng mã Java thay vì cấu hình xml
 ## @Bean
 * **@Bean** tương ứng với phần từ **< bean />** trong XML, được sử dụng để tạo các Spring bean và thường được sử dụng cùng với **Configuration**
-## @Bean vs @Component
 
 # Nguồn
 https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and-dependency-injection/ <br>
