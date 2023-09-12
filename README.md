@@ -112,20 +112,28 @@ Scope của một bean là nơi định nghĩa vòng đời, và cách nó đư�
 ## @Controller
 * Là nơi đại diện cho lớp Controller trong mô hình MVC
 * Nó được sử dụng để đánh dấu một class là một Spring Component, đảm nhiệm vai trò của 1 bộ điều khiển
+* Thường chúng ta sử dụng **@Controller** kết hợp với chú thích **@RequestMapping** cho các phương thức xử lý yêu cầu và **@ResponseBody** cho phép chuyển đổi đối tượng trả về thành phản hồi HttpResponse
 ### Ví dụ
+![hi](https://i.imgur.com/i5Pue6U.png)
 
 ## @RestController
-* Khi đánh dấu một lớp bằng **@RestController**, lớp đó sẽ hoạt động như một controller trong dự án Spring REST, chịu trách nhiệm xử lý các yêu cầu HTTP từ các ứng dụng hoặc dịch vụ khác thông qua các API REST
+* **@RestController** là một phiên bản đặc biệt của controller. Nó bao gồm **@Controller** và **@ResponseBody**, do đó giúp đơn giản hóa việc triển khai Controller
+* Sự khác biệt giữa **@RestController** và **@Controller** nằm ở cách xử lý dữ liệu trả về. **@RestController** tự động chuyển đổi đối tượng trả về thành dữ liệu định dạng(JSON/XML), trong khi **@Controller** yêu cầu sử dụng **@ResponseBody** để chỉ định cách xử lý dữ liệu trả về
+
 ## @Service
 * Khi đánh dấu một lớp bằng **@Service**, nó là nơi xử lý nghiệp vụ của hệ thống và có thể được sử dụng lại ở nhiều nơi
+
 ## @Repository
 * là annotation cấp class, đại diện cho lớp Data Access Object(DAO), chịu trách nhiệm cho việc truy cập dữ liệu từ cơ sở dữ liệu
+
 ## @Configuration
 * Lớp được đánh dấu bằng **@Configuration**, nơi định nghĩa ra các Bean, thay thế cho thẻ '< bean />' trong file xml
 * Việc sử dụng **@Configuration** cho phép quản lý các Bean trong ứng dụng Spring bằng cách sử dụng mã Java thay vì cấu hình xml
+![hi](https://i.imgur.com/EvI3vfO.png)
+
 ## @Bean
 * **@Bean** tương ứng với phần từ **< bean />** trong XML, được sử dụng để tạo các Spring bean và thường được sử dụng cùng với **Configuration**
-## @Bean vs @Component
+
 
 # Nguồn
 https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and-dependency-injection/ <br>
@@ -137,4 +145,5 @@ https://levunguyen.com/laptrinhspring/2020/03/09/pham-vi-hoat-dong-cua-bean/<br>
 https://javatechonline.com/spring-boot-annotations-with-examples/ <br>
 https://www.tutorialspoint.com/spring/spring_autowired_annotation.htm#:~:text=The%20%40Autowired%20annotation%20provides%20more,names%20and%2For%20multiple%20arguments.<br>
 https://techmaster.vn/posts/36165/spring-boot-1-huong-dan-component-va-autowired<br>
+https://www.baeldung.com/spring-controller-vs-restcontroller<br>
 
