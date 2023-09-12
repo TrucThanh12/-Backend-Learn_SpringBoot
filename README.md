@@ -89,7 +89,6 @@ Scope của một bean là nơi định nghĩa vòng đời, và cách nó đư�
 * Định nghĩa Scope Prototype bằng Java<br>
 ![hi](https://i.imgur.com/oIa9ohv.png)
 
-> Những Scope như Request, Session, Application và Websocket thì chỉ tồn tại ở những ứng dụng là Web Application
 ## Request
 * Spring Container sẽ tạo bean mới khi có một request từ người dùng. Sau khi Request xử lý xong thì bean sẽ bị xóa đi
 ## Session
@@ -99,6 +98,7 @@ Scope của một bean là nơi định nghĩa vòng đời, và cách nó đư�
 * Application Scope được tạo một lần cho toàn bộ ứng dụng Web Application. 
 ## WebSocket
 * WebSocket thường được sử dụng để truyền tài dữ liệu giữa máy khách và máy chủ trong thời gian thực, và việc quản lý trạng thái hoặc thông tin phiên làm việc thường được thực hiện theo cách tùy thuộc vào ứng dụng cụ thể
+> Những Scope như Request, Session, Application và Websocket thì chỉ tồn tại ở những ứng dụng là Web Application
 
 # Spring Bean Annotations
 ## @Component
