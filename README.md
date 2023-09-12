@@ -75,23 +75,29 @@ Spring Bean là các object trong Spring Framework, được khởi tạo thông
 # Spring Bean Scope
 Scope của một bean là nơi định nghĩa vòng đời, và cách nó được khởi tạo và quản lý bới IoC trong một ngữ cảnh cụ thể. Spring có 6 kiểu Scope như sau:
 ## Singleton
-* Một bean được định nghĩa với Singleton Scope sẽ khiến IoC Container khởi tạo duy nhất một instance cho bean đó và nó được sử dụng trong tất cả yêu cầu đến bean này
-* Bất kỳ một thay đổi nào trên các singleton scope bean đều sẽ ảnh hưởng đến tất cả những nơi đang tham chiếu đến nó. 
+* Khi một bean khai báo là Singleton thì Bean đó là duy nhất trong Spring IoC và được share cho tất cả các Beans khác nếu cần sử dụng nó. Như vậy chỉ cần tạo một Bean duy nhất và sử dụng cho toàn hệ thống.
+* Ví dụ: có 1 Bean connect database thì chỉ tạo 1 lần duy nhất. Các bean khác muốn dùng thì nhúng vào chứ không phải có 10 Beans khác nhau dùng Bean Connect DB trong Spring IoC
+* Scope mặc định khi một Bean được tạo ra là Singleton
+* Định nghĩa Scope Singleton bằng XML<br>
+![hi](https://i.imgur.com/cQCA4qN.png)
+* Định nghĩa Scope Singletion bằng Java<br>
+![hi](https://i.imgur.com/UI3apLx.png)
 ## Prototype
-* Một bean với prototype scope sẽ trả về các instance khác nhau mỗi khi có một yêu cầu mới sử dụng chúng đến IoC container
-* Hai object tham chiếu đến các Prototype Bean, thì mỗi object trả về từ IoC là khác nhau, do vậy việc chúng ta thay đổi giá trị trên một Prototype bean sẽ không ảnh hưởng đến Prototype bean của object còn lại
+* Khác với Singleto Scope, Bean sẽ được tạo ra mỗi khi có một yêu cầu tạo Bean. Mỗi lần gọi tới Bean mà có Scope là Prototype thì nó sẽ tạo ra một đối tượng Bean trong Spring IoC container
+* Định nghĩa Scope Prototype bằng XML<br>
+![hi](https://i.imgur.com/0uACnRQ.png)
+* Định nghĩa Scope Prototype bằng Java<br>
+![hi](https://i.imgur.com/oIa9ohv.png)
+
+> Những Scope như Request, Session, Application và Websocket thì chỉ tồn tại ở những ứng dụng là Web Application
 ## Request
-* Request Scope khởi tạo một bean instance cho một HTTP request
-* Request Scope đảm bảo rằng mỗi khi có một HTTP Request đến ứng dụng, một instance mới của bean sẽ được tạo ra và được sử dụng trong request đó. Nói cách khác, mỗi request có một bản sao riêng biệt của bean này để làm việc. Đảm bảo rằng các thay đổi trong bean này trong một request không ảnh hưởng đến các request khác.
+* Spring Container sẽ tạo bean mới khi có một request từ người dùng. Sau khi Request xử lý xong thì bean sẽ bị xóa đi
 ## Session
-* Session Scope khởi tạo một bean instance cho một HTTP Session
-* Session Scope cho phép bạn tạo bean và giữ chúng trong 1 phiên làm việc trong ứng dụng web. Điều này có nghĩa là các bean có phạm vi session sẽ tồn tại trong suốt thời gian làm việc của người dùng và sẽ được chia sẻ giữa các request trong cùng 1 phiên làm việc
+* Scope Session sẽ chỉ tồn tại chừng nào Session ở HTTP. Nó sẽ bị xóa đi khỏi Spring IoC khi Session ở Web bị xóa hoặc hết hiệu lực
 * Ví dụ, thông tin đăng nhập của người dùng có thể được lưu trữ trong 1 bean với session scope
 ## Application
-* Application Scope khởi tạo một bean instance cho một vồng đời của một ServletContext, nó tương tự như singletion scope nhưng có 1 điểm khác biệt rất quan trọng giữa chúng
-* Khi mà application bean sử dụng một instance cho nhiều ứng dụng đang chạy trong cùng 1 SevletContext thì singletion bean được sử dụng trong một application context của 1 ứng dụng nhất định
+* Application Scope được tạo một lần cho toàn bộ ứng dụng Web Application. 
 ## WebSocket
-* WebSocket Scope khởi tạo cho một WebSocket Session
 * WebSocket thường được sử dụng để truyền tài dữ liệu giữa máy khách và máy chủ trong thời gian thực, và việc quản lý trạng thái hoặc thông tin phiên làm việc thường được thực hiện theo cách tùy thuộc vào ứng dụng cụ thể
 
 # Spring Bean Annotations
@@ -115,6 +121,7 @@ Scope của một bean là nơi định nghĩa vòng đời, và cách nó đư�
 * Việc sử dụng **@Configuration** cho phép quản lý các Bean trong ứng dụng Spring bằng cách sử dụng mã Java thay vì cấu hình xml
 ## @Bean
 * **@Bean** tương ứng với phần từ **< bean />** trong XML, được sử dụng để tạo các Spring bean và thường được sử dụng cùng với **Configuration**
+## @Bean vs @Component
 
 # Nguồn
 https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and-dependency-injection/ <br>
@@ -122,4 +129,8 @@ https://mazdagialaii.vn/inversion-of-control-la-gi/ <br>
 https://viblo.asia/p/dependency-injection-va-inversion-of-control-Qpmle9Nolrd <br>
 https://viblo.asia/p/tong-quan-ve-spring-bean-WR5JRbZ0JGv <br>
 https://shareprogramming.net/hieu-ro-spring-bean-scope/ <br>
+https://levunguyen.com/laptrinhspring/2020/03/09/pham-vi-hoat-dong-cua-bean/<br>
 https://javatechonline.com/spring-boot-annotations-with-examples/ <br>
+https://www.tutorialspoint.com/spring/spring_autowired_annotation.htm#:~:text=The%20%40Autowired%20annotation%20provides%20more,names%20and%2For%20multiple%20arguments.<br>
+https://techmaster.vn/posts/36165/spring-boot-1-huong-dan-component-va-autowired<br>
+https://www.geeksforgeeks.org/spring-component-annotation-with-example/<br>
