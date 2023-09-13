@@ -175,7 +175,7 @@ Annotation **@Qualifier** được dùng cùng với annnotation **@Autowired**,
 ![hi](https://i.imgur.com/QJXC96c.png)<br>
 ![hi](https://i.imgur.com/Z430vIQ.png)<br>
 ![hi](https://i.imgur.com/AweDIaf.png)<br>
-> Nếu không sử dụng **@Qualifier**, khi Spring gặp nhiều bean cùng 1 kiểu, nó sẽ không thể xác định rõ ràng bean nào muốn thêm vào, điều này dẫn đến ngoại lệ **NoUniqueBeanDefinitionException**.
+> Nếu không sử dụng **@Qualifier**, khi Spring gặp nhiều bean cùng 1 kiểu, nó sẽ không thể xác định rõ ràng bean nào muốn thêm vào, điều này dẫn đến ngoại lệ **NoUniqueBeanDefinitionException**. <br>
 
 ![h](https://i.imgur.com/AUbJuOu.png)
 # Nguồn
