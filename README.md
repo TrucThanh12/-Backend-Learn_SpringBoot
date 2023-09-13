@@ -32,7 +32,7 @@ Ta có ví dụ sau:
 * Class MySqlDAO chuyên thực hiện truy vấn cơ sở dữ liệu MySQL của ứng dụng
 * Bây giờ nếu muốn truy vấn tới cơ sở dữ liệu từ Mongo. Thì phải xóa khai báo MySqlDAO và thay bằng MongoDAO, sau đó muốn dùng lại MySqlDAO thì lại phải sửa và test lại nhiều lần 
 
-Để hiểu Dependency Injection một cách đơn giản như sau:
+Để hiểu Dependency Injection một cách đơn giản như sau:<br>
 ![Alt text](https://i.imgur.com/Gw5Ysva.png)
 * Các module không giao tiếp trực tiếp với nhau, mà thông qua interface. Module cấp thấp sẽ implement interface, module cấp cao sẽ gọi module cấp thấp thông qua interface
     * Để giao tiếp với database, ta có interface AbstractDAO, các module cấp thấp là MongoDAO, MySqlDAO. Module cấp cao là Client sẽ chỉ sử dụng interface AbstractDAO
@@ -128,13 +128,29 @@ Scope của một bean là nơi định nghĩa vòng đời, và cách nó đư�
 
 ## @Configuration
 * Lớp được đánh dấu bằng **@Configuration**, nơi định nghĩa ra các Bean, thay thế cho thẻ '< bean />' trong file xml
-* Việc sử dụng **@Configuration** cho phép quản lý các Bean trong ứng dụng Spring bằng cách sử dụng mã Java thay vì cấu hình xml
+* Việc sử dụng **@Configuration** cho phép quản lý các Bean trong ứng dụng Spring bằng cách sử dụng mã Java thay vì cấu hình xml <br>
 ![hi](https://i.imgur.com/EvI3vfO.png)
 
 ## @Bean
 * **@Bean** tương ứng với phần từ **< bean />** trong XML, được sử dụng để tạo các Spring bean và thường được sử dụng cùng với **Configuration**
 
 
+# Spring @Autowired Annotation
+Annotation **@Autowired** đánh dấu một Constructor, phương thức Setter, thuộc tính và phương thức để tự động inject các bean bằng cơ chế Dependency Injection của Spring <br>
+Sau khi tìm thấy một class đánh dấu **@Component** thì quá trình inject Bean xảy ra theo cách như sau:
+* Nếu class không có hàm Contructor hay Setter thì sẽ sử dụng **Java Reflection** để đưa đối tượng vào thuộc tính đánh dấu **@Autowire**
+* Nếu có hàm **Contructor** thì sẽ inject Bean vào bởi tham số của hàm
+* Nếu có hàm **Setter** thì sẽ inject Bean vào bởi tham số của hàm
+> Annotation **@Autowired** trên một constructor không còn cần thiết nếu Bean mục tiêu đã định nghĩa chỉ một constructor từ ban đầu. Tuy nhiên, nếu có nhiều constructor khả dụng, ít nhất một trong các constructor đó phải được đánh dấu bằng **@Autowired** để chỉ dẫn cho container biết constructor nào đang sử dụng
+### Ví dụ
+![hi](https://i.imgur.com/ybYnSjk.png)<br>
+![hi](https://i.imgur.com/N8B7Kt5.png)<br>
+![hi](https://i.imgur.com/kQHvZ15.png)<br>
+
+> Sử dụng annotation **@Order** nếu muốn các bean được sắp xếp theo một thứ tự cụ thể 
+# Wiring in Spring: @Autowired, @Resoure and @Inject
+
+# Spring @Qualifier Annotation
 # Nguồn
 https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and-dependency-injection/ <br>
 https://mazdagialaii.vn/inversion-of-control-la-gi/ <br>
@@ -146,4 +162,6 @@ https://javatechonline.com/spring-boot-annotations-with-examples/ <br>
 https://www.tutorialspoint.com/spring/spring_autowired_annotation.htm#:~:text=The%20%40Autowired%20annotation%20provides%20more,names%20and%2For%20multiple%20arguments.<br>
 https://techmaster.vn/posts/36165/spring-boot-1-huong-dan-component-va-autowired<br>
 https://www.baeldung.com/spring-controller-vs-restcontroller<br>
+https://www.geeksforgeeks.org/spring-autowired-annotation/<br>
+https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html<br>
 
