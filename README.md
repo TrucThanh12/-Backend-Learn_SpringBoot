@@ -149,14 +149,35 @@ Sau khi tìm thấy một class đánh dấu **@Component** thì quá trình inj
 
 > Sử dụng annotation **@Order** nếu muốn các bean được sắp xếp theo một thứ tự cụ thể 
 > Việc Autowiring sẽ thất bại khi không có bean nào phù hợp được injection, thì Spring bỏ qua bằng cách đánh dấu nó không bắt buộc đó là thiết lập thuộc tính **required = false**<br>
-
 ![hi](https://i.imgur.com/oB6hvl7.png)<br>
 ![hi](https://i.imgur.com/lckzf4l.png)<br>
 ![hi](https://i.imgur.com/0Gyu9pF.png)<br>
 ![ji](https://i.imgur.com/t2Bwgov.png)
-# Wiring in Spring: @Autowired, @Resoure and @Inject
 
+# Wiring in Spring: @Resoure, @Inject and @Autowired
+## @Resource annotation
+Annotation @Resource có các cách thức thực thi sau đây, được liệt kê theo mức ưu tiên:
+* Match by Name
+* Match by Type
+* Match by Qualifier
+Các cách thức này áp dụng cho cả setter injection và field injection
+### Field Injection
+* Match by Name
+* Match by Type
+* Match by Qualifier
+### Setter Injection
+
+## @Inject annotation
+## @Autowired annotation
 # Spring @Qualifier Annotation
+Annotation **@Qualifier** được dùng cùng với annnotation **@Autowired**, khi cần kiểm soát nhiều hơn quá trình dependency injection. Annotation này được sử dụng để tránh nhầm lẫn xẩy ra khi tạo nhiều bean cùng loại.
+## Ví dụ
+![hi](https://i.imgur.com/QJXC96c.png)<br>
+![hi](https://i.imgur.com/Z430vIQ.png)<br>
+![hi](https://i.imgur.com/AweDIaf.png)<br>
+> Nếu không sử dụng **@Qualifier**, khi Spring gặp nhiều bean cùng 1 kiểu, nó sẽ không thể xác định rõ ràng bean nào muốn thêm vào, điều này dẫn đến ngoại lệ **NoUniqueBeanDefinitionException**.
+
+![h](https://i.imgur.com/AUbJuOu.png)
 # Nguồn
 https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and-dependency-injection/ <br>
 https://mazdagialaii.vn/inversion-of-control-la-gi/ <br>
@@ -170,4 +191,5 @@ https://techmaster.vn/posts/36165/spring-boot-1-huong-dan-component-va-autowired
 https://www.baeldung.com/spring-controller-vs-restcontroller<br>
 https://www.geeksforgeeks.org/spring-autowired-annotation/<br>
 https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html<br>
-
+https://www.baeldung.com/spring-annotations-resource-inject-autowire<br>
+https://www.baeldung.com/spring-qualifier-annotation<br>
