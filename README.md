@@ -148,6 +148,11 @@ Sau khi tìm thấy một class đánh dấu **@Component** thì quá trình inj
 ![hi](https://i.imgur.com/kQHvZ15.png)<br>
 
 > Sử dụng annotation **@Order** nếu muốn các bean được sắp xếp theo một thứ tự cụ thể 
+> Việc Autowiring sẽ thất bại khi không có bean nào phù hợp được injection, thì Spring bỏ qua bằng cách đánh dấu nó không bắt buộc đó là thiết lập thuộc tính **required = false**<br>
+![hi](https://i.imgur.com/oB6hvl7.png)<br>
+![hi](https://i.imgur.com/lckzf4l.png)<br>
+![hi](https://i.imgur.com/0Gyu9pF.png)<br>
+![ji](https://i.imgur.com/t2Bwgov.png)
 # Wiring in Spring: @Autowired, @Resoure and @Inject
 
 # Spring @Qualifier Annotation
