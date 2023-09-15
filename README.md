@@ -160,7 +160,12 @@ Sau khi tìm thấy một class đánh dấu **@Component** thì quá trình inj
 ![k](https://i.imgur.com/lkMnb9Q.png) <br>
 Ở ví dụ trên, bean 'person' được tạo cho class Person, trong bean 'customer' chúng ta dùng thuộc tính ref để link tới bean person<br>
 Nhưng thực tế thì không cần chỉ rõ biến person trong customer link tới bean nào, Spring Container sẽ tự động tìm bean thích hợp để inject nó vào. Đó chính là Auto-Wiring trong Spring
-
+> Có 5 loại auto-wiring trong Spring:<br>
+Auto-wiring **'no'**: áp dụng ở ví dụ trên<br>
+Auto-wiring **'byName'**: Spring container tìm bean có id trùng với attribute Person trong class Customer và thực hiện autowired thông qua method setter<br>
+Auto-wiring **'byType'**: Spring container tìm bean có type là Person và thực hiện autowired thông qua method setter<br>
+Auto-wiring **'constructor'**: Spring container tìm bean có type giống type của Person trong method contructor và thực hiện autowired thông qua method constructor<br>
+Auto-wiring **'autodetect'**: Spring Container sẽ thử với auto wired byConstructor, nếu không được thì nó chuyển sang auto wired byType. Tuy nhiên cách này đã không còn sử dụng từ Spring version 3 <br>
 
 
 ## @Resource annotation
