@@ -200,10 +200,9 @@ Annotation **@Qualifier** được dùng cùng với annnotation **@Autowired**,
 
 # Tìm hiểu về MongoDB
 ## Ưu điểm
-* Do sử dụng lưu trữ dữ liệu dưới dạng Document JSON nên mỗi Collection đều có thiết kế kích thước và thuộc tính khác nhau. Tuy nhiên lại khá linh hoạt khi tiến hành lưu trữ bởi vậy người dùng muốn thêm dữ liệu chỉ cần insert là xong. Chúng ta có thể thêm các thuộc tính mới khi chúng ta cần, mà không cần thay đổi một lược đồ cơ sở dữ liệu tập trung
-* Những dữ liệu lưu trong hệ thống của mongodb không bị ràng buộc nhau, không bị phụ thuộc bởi khóa chính hay khóa phụ như RDBMS nên khi thực hiện các thao tác thêm, sửa, xóa thì sẽ đơn giản hơn việc kiểm tra ràng buộc như trong RDBMS
-* Khả năng mở rộng tốt của MongoDb được đánh giá cao bởi nó sử dụng cụm các node chứa những dữ liệu giao tiếp với nhau được gọi là Cluster
-* Những index cho từng dữ liệu sẽ là tự động để hỗ trợ truy vấn thông tin nhanh và đạt hiệu suất cao
+* Ít schema hơn: vì schema được sỉnh ra là để nhóm các đối tượng vào 1 cụm, dễ quản lý. Ví dụ như tạo 1 schema tên là Students thì chỉ có những gì liên quan đến student thì mới được cho vào schema này. Trong khi đó mongodb thì chỉ 1 collection ta có thể chứa nhiều document khác nhau, với mỗi số trường, nội dung, kích thước lại có thể khác nhau
+* Không có các join phức tạp
+* Khả năng mở rộng cực lớn: việc mở rộng dữ liệu không cần lo đến các vấn đề như khóa ngoại, khóa chính, kiểm tra ràng buộc ... 
 
 ## Nhược điểm
 * Đôi khi sẽ tốn bộ nhớ do dữ liệu lưu ở dạng key-value nên những Collection chỉ khác về value mà có phần giống về key. Và vì không hỗ trợ join như RDBMS nên sẽ có tình trạng dư thừa dữ liệu
