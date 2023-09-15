@@ -160,21 +160,21 @@ Sau khi tìm thấy một class đánh dấu **@Component** thì quá trình inj
 Annotation **@Resource** có các cách thức thực thi sau đây, được liệt kê theo mức ưu tiên:
 * Match by Name
 * Match by Type
-* Match by Qualifier
+* Match by Qualifier <br>
 Các cách thức này áp dụng cho cả setter injection và field injection
 
 ## @Inject annotation
 Annotation **@Inject** có các cách thức thực thi sau đây, được liệt kê theo mức ưu tiên:
 * Match by Type
 * Match by Qualifier
-* Match by Name
+* Match by Name<br>
 Các cách thức này áp dụng cho cả setter injection và field injection
 
 ## @Autowired annotation
 Annotation **@Autowired** có các cách thức thực thi tương tự **@Inject**, được liệt kê theo mức ưu tiên:
 * Match by Type
 * Match by Qualifier
-* Match by Name
+* Match by Name<br>
 Các cách thức này áp dụng cho cả setter injection và field injection
 # Spring @Qualifier Annotation
 Annotation **@Qualifier** được dùng cùng với annnotation **@Autowired**, khi cần kiểm soát nhiều hơn quá trình dependency injection. Annotation này được sử dụng để tránh nhầm lẫn xẩy ra khi tạo nhiều bean cùng loại.
