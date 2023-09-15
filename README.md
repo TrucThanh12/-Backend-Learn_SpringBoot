@@ -206,7 +206,6 @@ Annotation **@Qualifier** được dùng cùng với annnotation **@Autowired**,
 
 ## Nhược điểm
 * Đôi khi sẽ tốn bộ nhớ do dữ liệu lưu ở dạng key-value nên những Collection chỉ khác về value mà có phần giống về key. Và vì không hỗ trợ join như RDBMS nên sẽ có tình trạng dư thừa dữ liệu
-* Thực hiện tác vụ thêm, sửa, xóa khi mongodb chưa thể cập nhật tức khắc vào ổ cứng mà cần 60 giây sau để ghi toàn bộ những thay đổi dữ liệu từ RAM xuống ổ cứng. Điều này khá rủi ro nếu như trong 60 giây đó có sự cố xay ra như mất điện sẽ gây ra mất dữ liệu
 
 # Nguồn
 https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and-dependency-injection/ <br>
