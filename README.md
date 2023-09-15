@@ -156,11 +156,18 @@ Sau khi tìm thấy một class đánh dấu **@Component** thì quá trình inj
 ![ji](https://i.imgur.com/t2Bwgov.png)
 
 # Wiring in Spring: @Resoure, @Inject and @Autowired
+### Ví dụ
+![k](https://i.imgur.com/lkMnb9Q.png) <br>
+Ở ví dụ trên, bean 'person' được tạo cho class Person, trong bean 'customer' chúng ta dùng thuộc tính ref để link tới bean person<br>
+Nhưng thực tế thì không cần chỉ rõ biến person trong customer link tới bean nào, Spring Container sẽ tự động tìm bean thích hợp để inject nó vào. Đó chính là Auto-Wiring trong Spring
+
+
+
 ## @Resource annotation
 Annotation **@Resource** có các cách thức thực thi sau đây, được liệt kê theo mức ưu tiên:
 * Match by Name
 * Match by Type
-* Match by Qualifier <br>
+* Match by Qualifier<br>
 Các cách thức này áp dụng cho cả setter injection và field injection
 
 ## @Inject annotation
@@ -200,3 +207,4 @@ https://www.geeksforgeeks.org/spring-autowired-annotation/<br>
 https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired.html<br>
 https://www.baeldung.com/spring-annotations-resource-inject-autowire<br>
 https://www.baeldung.com/spring-qualifier-annotation<br>
+https://stackjava.com/spring/spring-core-phan-8-autowiring.html<br>
