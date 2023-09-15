@@ -197,6 +197,18 @@ Annotation **@Qualifier** được dùng cùng với annnotation **@Autowired**,
 > Nếu không sử dụng **@Qualifier**, khi Spring gặp nhiều bean cùng 1 kiểu, nó sẽ không thể xác định rõ ràng bean nào muốn thêm vào, điều này dẫn đến ngoại lệ **NoUniqueBeanDefinitionException**.
 
 ![h](https://i.imgur.com/AUbJuOu.png)
+
+# Tìm hiểu về MongoDB
+## Ưu điểm
+* Do sử dụng lưu trữ dữ liệu dưới dạng Document JSON nên mỗi Collection đều có thiết kế kích thước và thuộc tính khác nhau. Tuy nhiên lại khá linh hoạt khi tiến hành lưu trữ bởi vậy người dùng muốn thêm dữ liệu chỉ cần insert là xong. Chúng ta có thể thêm các thuộc tính mới khi chúng ta cần, mà không cần thay đổi một lược đồ cơ sở dữ liệu tập trung
+* Những dữ liệu lưu trong hệ thống của mongodb không bị ràng buộc nhau, không bị phụ thuộc bởi khóa chính hay khóa phụ như RDBMS nên khi thực hiện các thao tác thêm, sửa, xóa thì sẽ đơn giản hơn việc kiểm tra ràng buộc như trong RDBMS
+* Khả năng mở rộng tốt của MongoDb được đánh giá cao bởi nó sử dụng cụm các node chứa những dữ liệu giao tiếp với nhau được gọi là Cluster
+* Những index cho từng dữ liệu sẽ là tự động để hỗ trợ truy vấn thông tin nhanh và đạt hiệu suất cao
+
+## Nhược điểm
+* Đôi khi sẽ tốn bộ nhớ do dữ liệu lưu ở dạng key-value nên những Collection chỉ khác về value mà có phần giống về key. Và vì không hỗ trợ join như RDBMS nên sẽ có tình trạng dư thừa dữ liệu
+* Thực hiện tác vụ thêm, sửa, xóa khi mongodb chưa thể cập nhật tức khắc vào ổ cứng mà cần 60 giây sau để ghi toàn bộ những thay đổi dữ liệu từ RAM xuống ổ cứng. Điều này khá rủi ro nếu như trong 60 giây đó có sự cố xay ra như mất điện sẽ gây ra mất dữ liệu
+
 # Nguồn
 https://www.geeksforgeeks.org/spring-difference-between-inversion-of-control-and-dependency-injection/ <br>
 https://mazdagialaii.vn/inversion-of-control-la-gi/ <br>
@@ -213,3 +225,4 @@ https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/a
 https://www.baeldung.com/spring-annotations-resource-inject-autowire<br>
 https://www.baeldung.com/spring-qualifier-annotation<br>
 https://stackjava.com/spring/spring-core-phan-8-autowiring.html<br>
+https://www.mongodb.com/compare/mongodb-mysql<br>
