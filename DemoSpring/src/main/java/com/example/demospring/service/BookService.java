@@ -1,11 +1,13 @@
-package com.example.demospring.Setter;
+package com.example.demospring.service;
 
+import com.example.demospring.model.Book;
+import com.example.demospring.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Service
+@Repository
 public class BookService {
     private BookRepository bookRepository;
     @Autowired

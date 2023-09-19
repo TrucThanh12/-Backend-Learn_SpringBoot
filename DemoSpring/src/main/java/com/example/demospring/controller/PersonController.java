@@ -1,10 +1,14 @@
-package com.example.demospring.Constructor;
+package com.example.demospring.controller;
 
+import com.example.demospring.model.Person;
+import com.example.demospring.service.PersonService;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+@Log4j2
 @RestController
 @RequestMapping("/api")
 public class PersonController {
@@ -16,8 +20,9 @@ public class PersonController {
     }
 
     @GetMapping("/persons")
-    public List<Person> getAllPersons(){
-        return personService.getAllPersons();
+    public ResponseEntity<?> getAllPerson(){
+        log.info("(getAllBook)");
+        return ResponseEntity.status(HttpStatus.OK).body(personService.getAllPersons());
     }
 
     @GetMapping("/person/{id}")

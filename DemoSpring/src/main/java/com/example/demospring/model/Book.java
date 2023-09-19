@@ -1,15 +1,14 @@
-package com.example.demospring.Constructor;
+package com.example.demospring.model;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Person")
+@Document(collection = "Book")
 @Data
-public class Person {
+public class Book {
     @Id
     private String id;
     private String name;
-    private int age;
-
+    private Integer price;
 }

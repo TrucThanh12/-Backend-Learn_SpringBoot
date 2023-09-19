@@ -1,5 +1,7 @@
-package com.example.demospring.Field;
+package com.example.demospring.controller;
 
+import com.example.demospring.model.Student;
+import com.example.demospring.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
