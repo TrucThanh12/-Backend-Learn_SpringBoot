@@ -2,12 +2,10 @@ package com.example.demotest.controller;
 
 import com.example.demotest.entity.Author;
 import com.example.demotest.entity.Book;
-import com.example.demotest.service.BookAuthorService;
 import com.example.demotest.service.BookService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.CachePut;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +14,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1")
-@RequiredArgsConstructor
 public class BookController {
-    private final BookService bookService;
-    private final BookAuthorService bookAuthorService;
+    private BookService bookService;
+    @Autowired
+    public void setBookService(BookService bookService){
+        this.bookService = bookService;
+    }
 
     @PostMapping("/book")
     public ResponseEntity<String> createBook(@RequestBody Book book){
@@ -48,7 +48,7 @@ public class BookController {
 
     @GetMapping("/book/authorByBook/{id}")
     public ResponseEntity<Author> getAuthorByIdBook(@PathVariable("id") String id){
-        Author author = bookAuthorService.getAuthorByIdBook(id);
+        Author author = bookService.getAuthorByIdBook(id);
         return ResponseEntity.ok(author);
     }
 

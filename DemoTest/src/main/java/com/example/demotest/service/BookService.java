@@ -1,4 +1,5 @@
 package com.example.demotest.service;
+import com.example.demotest.entity.Author;
 import com.example.demotest.entity.Book;
 import com.example.demotest.exception.BookNotFoundException;
 import com.example.demotest.repository.BookReporitory;
@@ -13,14 +14,25 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-@RequiredArgsConstructor
 @Service
 public class BookService {
-    private final BookReporitory bookReporitory;
+    private BookReporitory bookReporitory;
+    private AuthorService authorService;
+    private RedisTemplate<String,String> redisTemplate;
+    @Autowired
+    public void setBookReporitory(BookReporitory bookReporitory){
+        this.bookReporitory = bookReporitory;
+    }
 
     @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    public void setAuthorService(AuthorService authorService){
+        this.authorService = authorService;
+    }
+
+    @Autowired
+    private void setRedisTemplate(RedisTemplate<String, String> redisTemplate){
+        this.redisTemplate = redisTemplate;
+    }
 
     public Page<Book> getAllBookWithPagination(int page, int size){
         PageRequest pageRequest = PageRequest.of(page,size);
@@ -69,5 +81,7 @@ public class BookService {
         bookReporitory.deleteById(id);
     }
 
-
+    public Author getAuthorByIdBook(String id) {
+        return authorService.getAuthorById(getBookById(id).getIdAuthor());
+    }
 }
