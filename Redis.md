@@ -58,7 +58,7 @@ Là 1 tập hợp các string không lặp lại, trong đó mỗi phần tử l
 # Trường hợp sử dụng Redis
 
 # Dùng Redis trong spring
-
+https://github.com/TrucThanh12/Backend/tree/main/DemoRedis
 # Nguồn
 https://aws.amazon.com/redis/<br>
 https://viblo.asia/p/tim-hieu-tong-quan-ve-redis-bJzKmrV6Z9N<br>
